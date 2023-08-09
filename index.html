@@ -12,30 +12,33 @@
 </head>
 
 <body>
-    <!-- Do we want to use a header? -->
-    <header>
-        <h1>Here's Your Results!</h1>
-    </header>
+    <header>Fill out this form!</header>
 
-    <div class="container text-center">
-        <div class="row align-items-start">
-
-            <div class="col">
-                Drink Section
-                <button>Refresh</button>
+    <div class="container">
+        <h2>This is Our Form Info!</h2>
+        <div>
+            <!-- Inline checkboxes for Book Genres-->
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">Book Genre 1</label>
             </div>
-
-            <div class="col">
-                Book Section
-                <button>Refresh</button>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">Book Genre 2</label>
             </div>
-
-            <div class="col">
-                Music Section
-                <button>Refresh</button>
-            </div>
-
         </div>
+
+        <div>
+            <!-- Toggle switch for Alcoholic vs. Nonalcoholic drinks -->
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button>Submit Button!</button>
     </div>
 
     <!--Bootstrap Bundle with Popper -->
@@ -43,7 +46,6 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
-
 </body>
 
 </html>
