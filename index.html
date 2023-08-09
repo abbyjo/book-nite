@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Nite Generator</title>
+    <title>✨Book Nite</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -13,37 +13,37 @@
 
 <body>
     
-    <main class="container text-center">
-        <h1>Book Nite<br>Generator</h1>
+    <main class="container text-center vh-100 ">
+        <h1 class="my-3 p-5 pb-3">Book Nite<br>Generator</h1>
         <section id="form" class="card align-items-center">
             <div class="card-body">
-                <p>Select your preferred genres and drink type below then click the button to recieve a custom reading experience!✨</p>
+                <p class="p-3">Select your preferred genres and drink type below then click the button to recieve a custom reading experience!✨</p>
                 <!-- Inline checkboxes for Book Genres-->
-                <div class="form-check form-check-inline">
+                <div class="form-check form-check-inline m-2">
                     <input class="form-check-input" type="checkbox" id="genre-1" value="genre-1">
                     <label class="form-check-label" for="genre-1">Book Genre 1</label>
                 </div>
-                <div class="form-check form-check-inline">
+                <div class="form-check form-check-inline m-2">
                     <input class="form-check-input" type="checkbox" id="genre-2" value="genre-2">
                     <label class="form-check-label" for="genre-2">Book Genre 2</label>
                 </div>
-                <div class="form-check form-check-inline">
+                <div class="form-check form-check-inline m-2">
                     <input class="form-check-input" type="checkbox" id="genre-3" value="genre-3">
                     <label class="form-check-label" for="genre-3">Book Genre 3</label>
                 </div>
-                <div class="form-check form-check-inline">
+                <div class="form-check form-check-inline m-2">
                     <input class="form-check-input" type="checkbox" id="genre-4" value="genre-4">
                     <label class="form-check-label" for="genre-4">Book Genre 4</label>
                 </div>
-                <div class="form-check form-check-inline">
+                <div class="form-check form-check-inline m-2">
                     <input class="form-check-input" type="checkbox" id="genre-5" value="genre-5">
                     <label class="form-check-label" for="genre-5">Book Genre 5</label>
                 </div>
-                <div class="form-check form-check-inline">
+                <div class="form-check form-check-inline m-2">
                     <input class="form-check-input" type="checkbox" id="genre-6" value="genre-6">
                     <label class="form-check-label" for="genre-6">Book Genre 6</label>
                 </div>
-                <div class="form-check form-check-inline">
+                <div class="form-check form-check-inline m-2">
                     <input class="form-check-input" type="checkbox" id="genre-7" value="genre-7">
                     <label class="form-check-label" for="genre-7">Book Genre 7</label>
                 </div>
@@ -51,14 +51,16 @@
 
             <div>
                 <!-- Toggle switch for Alcoholic vs. Nonalcoholic drinks -->
-                <div class="form-check form-switch">
+                <div class="form-check form-switch m-2">
                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
                     <label class="form-check-label" for="flexSwitchCheckChecked">Alcoholic</label>
                 </div>
             </div>
-            <button>See Results</button>
+            <button class="m-4 p-3">See Results</button>
         </section>
     </main>
+    <!-- Previous searches can be generated and saved as buttons in footer section -->
+    <footer></footer>
 
     <!--Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
