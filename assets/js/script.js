@@ -7,7 +7,8 @@ var drinkRecipeEl = document.getElementById(`drinkRecipe`)
 // DRINK SECTION
 // API Call for a random cocktail
 // www.thecocktaildb.com/api/json/v1/1/random.php
-// API Call for filter by non
+// API Call for filter by non Alcoholic Drink
+// www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic
 
 // Need to toggle alcoholic vs non alcoholic drinks
 // use if else statement
@@ -41,10 +42,10 @@ function getDrink() {
         }
 
     }
-    //    function getRandomNonDrink () {
+
+    //function getRandomNonAlcoholicDrink () {
 
     //    }
-    // Function to print
-    
+   
     // End of Drink Function Wrap
 }
