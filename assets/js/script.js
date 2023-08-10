@@ -31,17 +31,20 @@ function getDrink() {
                     .then(function (data) {
                         // Created Variable to Store Data
                         var alcDrinkInfo = data.drinks[0]
-                        console.log(alcDrinkInfo)
+                        printAlcoholicDrink(alcDrinkInfo)
                     })
             })
+
+        // Create new function to print the results in HTML
+        function printAlcoholicDrink(drinkInfo) {
+            console.log(drinkInfo)
+        }
+
     }
-    //    Create new function to print the results in HTML
-    printAlcoholicDrink(alcDrinkInfo)
     //    function getRandomNonDrink () {
 
     //    }
-    function printAlcoholicDrink(drinkInfo) {
-        console.log(drinkInfo)
-    }
+    // Function to print
+    
     // End of Drink Function Wrap
 }
