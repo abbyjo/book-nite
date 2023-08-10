@@ -32,3 +32,8 @@ h1 {
     color: white;
     border-color:#f25431
 }
+.custom-btn:hover {
+    color:black;
+    background-color: #ffaf47;
+    border-color:#ffaf47
+}
