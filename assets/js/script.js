@@ -6,6 +6,8 @@ var drinkName = document.getElementById(`drinkName`)
 // Drink Recipe
 var drinkRecipeEl = document.getElementById(`drinkRecipe`)
 
+var apiCocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/random.php`
+
 // DRINK SECTION
 // API Call for a random cocktail
 // www.thecocktaildb.com/api/json/v1/1/random.php
@@ -23,10 +25,14 @@ getDrink();
 
 function getDrink() {
     // Gets random drink via TheCocktailDB API
-    getRandomAlcoholicDrink();
+    // Create if else statement based on user toggle input
+
+    // Calls Alcoholic Drink Function
+    // getRandomAlcoholicDrink();
+    // Calls NonAlcoholic Drink Function
+    getRandomNonAlcoholicDrink();
 
     function getRandomAlcoholicDrink() {
-        var apiCocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/random.php`
         fetch(apiCocktailURL)
             .then(function (response) {
                 // stores response in JSON object
@@ -47,10 +53,26 @@ function getDrink() {
         }
 
     }
-
-    //function getRandomNonAlcoholicDrink () {
-
-    //    }
    
+    function getRandomNonAlcoholicDrink () {
+        fetch(apiCocktailURL)
+            .then(function (response) {
+                response.json()
+                    .then(function (data) {
+                        var mixedDrinkInfo = data.drinks[0]
+                        var alcoholicOrNah = data.drinks[0].strAlcoholic
+                        console.log(data)
+
+                        if (alcoholicOrNah === `Alcoholic`) {
+                            getRandomNonAlcoholicDrink ();
+                        } else {
+                            drinkImageEl.src = mixedDrinkInfo.strDrinkThumb
+                            drinkName.textContent = mixedDrinkInfo.strDrink
+                            drinkRecipeEl.textContent = mixedDrinkInfo.strInstructions
+                        }
+                    })
+            })
+    }
+
     // End of Drink Function Wrap
 }
