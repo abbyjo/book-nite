@@ -1,6 +1,8 @@
 // GLOBAL VARIABLES
 // Drink Image
 var drinkImageEl = document.getElementById(`drinkImage`)
+// Drink Name
+var drinkName = document.getElementById(`drinkName`)
 // Drink Recipe
 var drinkRecipeEl = document.getElementById(`drinkRecipe`)
 
@@ -39,6 +41,9 @@ function getDrink() {
         // Create new function to print the results in HTML
         function printAlcoholicDrink(drinkInfo) {
             console.log(drinkInfo)
+            drinkImageEl.src = drinkInfo.strDrinkThumb
+            drinkName.textContent = drinkInfo.strDrink
+            drinkRecipeEl.textContent = drinkInfo.strInstructions
         }
 
     }
