@@ -5,3 +5,30 @@
 h1 {
     font-family: 'Metamorphous', cursive;
 }
+
+.custom-bg {
+    background-color: #121214;
+    background-image: url("/assets/images/bg-img.jpg");
+    background-repeat: no-repeat;
+    background-position:center; 
+}
+
+.custom-title {
+    color:#ffffff;
+    font-weight: bold;
+    font-size: 55px; 
+}
+
+.custom-card {
+    background-color: #ecd1bd;
+    font-size: 1.25rem;
+    border-radius: 50px;
+    box-shadow: 15px 15px black;
+}
+
+.custom-btn {
+    border-radius: 20px;
+    background-color: #f25431;
+    color: white;
+    border-color:#f25431
+}
