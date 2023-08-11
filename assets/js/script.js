@@ -7,10 +7,26 @@ var drinkName = document.getElementById(`drinkName`)
 var drinkRecipeEl = document.getElementById(`drinkRecipe`)
 
 var apiCocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/random.php`
+// 
+var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
 
-var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`)
 
-var formSection = document.getElementById(`form`)
+// STORE LOCAL FORM DATA SECTION
+window.onload = function() {
+    // Add an event listener for form submissions
+    document.getElementById('submitButton').addEventListener('submit', function() {
+        
+        // Need Help here
+        // Gets the value of the checked boxes
+        var checkedBoxes = document.querySelectorAll(`checkbox`)
+        console.log(checkedBoxes)
+
+        // Gets the value of the toggle switch
+        var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
+        // Save the toggle switch value in localStorage.
+        localStorage.setItem('toggleSwitch', toggleSwitch);
+      });
+}
 
 // DRINK SECTION
 // API Call for a random cocktail
@@ -26,7 +42,6 @@ var formSection = document.getElementById(`form`)
 // then return the result
 // 
 getDrink();
-console.log(formSection.innerHTML = window.location.search); 
 
 function getDrink() {
     // Gets random drink via TheCocktailDB API
@@ -34,7 +49,7 @@ function getDrink() {
     // getRandomAlcoholicDrink();
     // getRandomNonAlcoholicDrink();
 
-    if (toggleSwitch.checked === true) {
+    if (toggleSwitch === true) {
         // Calls Alcoholic Drink Function
         getRandomAlcoholicDrink();
     } else {
