@@ -10,23 +10,32 @@ var apiCocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/random.php`
 // 
 var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
 
+// Submit Button
+var submitButton = document.getElementById(`submitButton`)
+
+let search = getElementById("Search").value;
+if (submitButton == "Keyword") {
+    //a href="page2.html" - (this is was my main idea, but i haven't found a way to implement it correctly) 
+}
 
 // STORE LOCAL FORM DATA SECTION
-window.onload = function() {
-    // Add an event listener for form submissions
-    document.getElementById('submitButton').addEventListener('submit', function() {
-        
-        // Need Help here
-        // Gets the value of the checked boxes
-        var checkedBoxes = document.querySelectorAll(`checkbox`)
-        console.log(checkedBoxes)
+// Add an event listener for form submissions
+submitButton.addEventListener('submit', function () {
 
-        // Gets the value of the toggle switch
-        var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
-        // Save the toggle switch value in localStorage.
-        localStorage.setItem('toggleSwitch', toggleSwitch);
-      });
-}
+    // Need Help here
+    // Gets the value of the checked boxes
+    var checkedBoxes = document.querySelectorAll(`checkbox`)
+    console.log(checkedBoxes)
+
+    // Gets the value of the toggle switch
+    var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
+    // Save the toggle switch value in localStorage.
+    localStorage.setItem('toggleSwitch', toggleSwitch);
+
+    // Retrieve the users name.
+    var toggleSwitch = localStorage.getItem('toggleSwitch');
+    console.log(toggleSwitch)
+});
 
 // DRINK SECTION
 // API Call for a random cocktail
@@ -78,8 +87,8 @@ function getDrink() {
         }
 
     }
-   
-    function getRandomNonAlcoholicDrink () {
+
+    function getRandomNonAlcoholicDrink() {
         fetch(apiCocktailURL)
             .then(function (response) {
                 response.json()
@@ -89,7 +98,7 @@ function getDrink() {
                         console.log(data)
 
                         if (alcoholicOrNah === `Alcoholic`) {
-                            getRandomNonAlcoholicDrink ();
+                            getRandomNonAlcoholicDrink();
                         } else {
                             drinkImageEl.src = mixedDrinkInfo.strDrinkThumb
                             drinkName.textContent = mixedDrinkInfo.strDrink
