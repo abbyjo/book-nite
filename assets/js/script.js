@@ -8,6 +8,10 @@ var drinkRecipeEl = document.getElementById(`drinkRecipe`)
 
 var apiCocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/random.php`
 
+var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`)
+
+var formSection = document.getElementById(`form`)
+
 // DRINK SECTION
 // API Call for a random cocktail
 // www.thecocktaildb.com/api/json/v1/1/random.php
@@ -22,15 +26,21 @@ var apiCocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/random.php`
 // then return the result
 // 
 getDrink();
+console.log(formSection.innerHTML = window.location.search); 
 
 function getDrink() {
     // Gets random drink via TheCocktailDB API
-    // Create if else statement based on user toggle input
 
-    // Calls Alcoholic Drink Function
     // getRandomAlcoholicDrink();
-    // Calls NonAlcoholic Drink Function
-    getRandomNonAlcoholicDrink();
+    // getRandomNonAlcoholicDrink();
+
+    if (toggleSwitch.checked === true) {
+        // Calls Alcoholic Drink Function
+        getRandomAlcoholicDrink();
+    } else {
+        // Calls NonAlcoholic Drink Function
+        getRandomNonAlcoholicDrink();
+    }
 
     function getRandomAlcoholicDrink() {
         fetch(apiCocktailURL)
