@@ -43,10 +43,14 @@ h1 {
 .custom-results-bg {
     background-color: #121214;
 <<<<<<< HEAD
+<<<<<<< HEAD
     background-image: url("../images/bg-img.jpg"); 
 =======
     background-image: url("/assets/images/bg-img.jpg");
 >>>>>>> 399ef9e (Git rebase troubleshooting)
+=======
+    background-image: url("/assets/images/bg-img.jpg");
+>>>>>>> 03338f8 (Added styling to results page)
     background-repeat: no-repeat;
     background-position:top; 
 }
