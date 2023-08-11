@@ -7,20 +7,13 @@ var drinkName = document.getElementById(`drinkName`)
 var drinkRecipeEl = document.getElementById(`drinkRecipe`)
 
 var apiCocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/random.php`
-// 
-var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
 
 // Submit Button
 var submitButton = document.getElementById(`submitButton`)
 
-let search = getElementById("Search").value;
-if (submitButton == "Keyword") {
-    //a href="page2.html" - (this is was my main idea, but i haven't found a way to implement it correctly) 
-}
-
 // STORE LOCAL FORM DATA SECTION
 // Add an event listener for form submissions
-submitButton.addEventListener('submit', function () {
+submitButton.addEventListener('click', function () {
 
     // Need Help here
     // Gets the value of the checked boxes

@@ -69,21 +69,25 @@
     <!-- Previous searches can be generated and saved as buttons in footer section -->
     <footer></footer>
 
-    <!-- Switches HTML files when "See Results" is pressed -->
-    <script>
-        var submitButton = document.getElementById(`submitButton`)
-        submitButton.addEventListener('submit', function () {
-            window.location.href = './results.html'
-        })
-    </script>
-
     <!--Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <!-- Switches HTML files when "See Results" is pressed -->
+    <script>
+        // Selects the submit button
+        var submitButton = document.getElementById(`submitButton`)
+    
+        submitButton.addEventListener(`click`, function () {
+            console.log(`Sarah is the smartest`)
+            window.open(`./results.html`, `resultsTab`)
+        })
+    </script>
+
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
