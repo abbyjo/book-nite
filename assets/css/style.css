@@ -1,11 +1,11 @@
 *{
-    font-family:'Averia Serif Libre', cursive;
+    font-family:'Averia Serif Libre', monospace;
 }
 
 h1 {
-    font-family: 'Metamorphous', cursive;
+    font-family: 'Metamorphous', monospace;
 }
-
+/* Landing page styling */
 .custom-bg {
     background-color: #121214;
     background-image: url("/assets/images/bg-img.jpg");
@@ -37,3 +37,60 @@ h1 {
     background-color: #ffaf47;
     border-color:#ffaf47
 }
+
+/* Results page styling */
+
+.custom-results-bg {
+    background-color: #121214;
+    background-image: url("/assets/images/bg-img.jpg");
+    background-repeat: no-repeat;
+    background-position:top; 
+}
+
+.custom-results-title {
+    color:#f7decc;
+}
+
+.custom-results-btn {
+   border: none;
+   border-radius: 15px;
+   background-color: #ffffff1a;
+   border: 1px solid #ffffff1a;
+   backdrop-filter: blur(30px);
+   color: #ffffffcc;
+   font-size: 14px;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+}
+.custom-results-btn:hover {
+    color:#f25431;
+    background-color: #ffffff0f;
+}
+.custom-results-card {
+    background-color: #ffffff1a;
+    color:#f4e6dc;
+    border-radius: 15px;
+}
+
+.custom-results-img{
+   border-radius: 15px; 
+}
+
+.custom-book-tab {
+    color:#f4e6dc
+}
+.custom-book-blurb {
+    background-color: #000000a3;
+    border-radius: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
