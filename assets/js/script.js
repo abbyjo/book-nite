@@ -48,3 +48,28 @@ function getDrink() {
     
     // End of Drink Function Wrap
 }
+
+
+// BOOK SECTION
+var bookTab = $('#book-tab')
+//Function to get books based on user input
+function getBooks(){
+    
+    var apiBookUrl = `https://openlibrary.org/search.json?sort=random&language=eng&limit=20&q=subject:thriller`
+    fetch(apiBookUrl)
+        .then(function (response){
+            return response.json();
+        })
+        //prints data to book tab
+        .then (function (data){
+        i = Math.floor(Math.random() * 20)
+        if (data.docs[i].cover_i)
+            {bookTab.children('img').attr('src', `https://covers.openlibrary.org/b/id/${data.docs[i].cover_i}-L.jpg`)}
+        else {console.log ("No cover image available :-(")}
+        bookTab.children('h3').text(data.docs[i].title)
+        bookTab.children('h4').text(data.docs[i].author_name)
+        bookTab.children('p').html(`Curious? <a href='https://openlibrary.org${data.docs[i].key}' target='_blank' rel='noopener noreferrer'>Click here</a> to visit Open Library's catalogue and learn more!`)
+    })
+}
+
+getBooks()
