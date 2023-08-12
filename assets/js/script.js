@@ -7,28 +7,27 @@ var drinkName = document.getElementById(`drinkName`)
 var drinkRecipeEl = document.getElementById(`drinkRecipe`)
 
 var apiCocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/random.php`
-
 // Submit Button
 var submitButton = document.getElementById(`submitButton`)
 
 // STORE LOCAL FORM DATA SECTION
 // Add an event listener for form submissions
-submitButton.addEventListener('click', function () {
+// submitButton.addEventListener('click', function () {
 
-    // Need Help here
-    // Gets the value of the checked boxes
-    var checkedBoxes = document.querySelectorAll(`checkbox`)
-    console.log(checkedBoxes)
+//     // Need Help here
+//     // Gets the value of the checked boxes
+//     var checkedBoxes = document.querySelectorAll(`checkbox`)
+//     console.log(checkedBoxes)
 
-    // Gets the value of the toggle switch
-    var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
-    // Save the toggle switch value in localStorage.
-    localStorage.setItem('toggleSwitch', toggleSwitch);
+//     // Gets the value of the toggle switch
+//     var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
+//     // Save the toggle switch value in localStorage.
+//     localStorage.setItem('toggleSwitch', toggleSwitch);
 
-    // Retrieve the users name.
-    var toggleSwitch = localStorage.getItem('toggleSwitch');
-    console.log(toggleSwitch)
-});
+//     // Retrieve the users name.
+//     var toggleSwitch = localStorage.getItem('toggleSwitch');
+//     console.log(toggleSwitch)
+// });
 
 // DRINK SECTION
 
@@ -37,10 +36,8 @@ submitButton.addEventListener('click', function () {
 // API Call for filter by non Alcoholic Drink
 // www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic
 
-// TODO
-// Use data from local storage to access the toggle switch data and run either getRandomAlcoholicDrink(); or getRandomNonAlcoholicDrink();
-
-getDrink();
+// HELP- how do I make this apply only to the results html page
+window.onload() = getDrink();
 
 function getDrink() {
     // Gets random drink via TheCocktailDB API
