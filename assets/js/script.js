@@ -1,15 +1,19 @@
-   // Selects the submit button
-   var submitButton = document.getElementById(`submitButton`)
+   // Selector(s)
+   var submitButton = document.getElementById(`submitButton`) //Submit button
 
-   submitButton.addEventListener(`click`, function () {
-       console.log(`Sarah is the smartest`)
-       debugger
-       // Stores form data in Local Storage
-       // HELP
-       // Gets the value of the checked boxes (Not correct selection)
-       var checkedBoxes = document.querySelectorAll(`checkbox`)
-       console.log(checkedBoxes)
+   //Function to save checked genres into local storage 
+   function saveForm() {
+    var bookGenres = $("input[name='genre']:checked")
+    var selectedGenres = [];
+    $.each(bookGenres, function () {
+        selectedGenres.push($(this).val());
+      });
+      selectedGenres.join();
+      localStorage.setItem('genres', selectedGenres)
+    }    
 
+   submitButton.addEventListener(`click`, function () {    
+       saveForm();
        // Gets the value of the toggle switch
        var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
        // Save the toggle switch value in localStorage.
@@ -65,7 +69,7 @@ var submitButton = document.getElementById(`submitButton`)
 // www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic
 
 // HELP- how do I make this apply only to the results html page
-window.onload() = getDrink();
+//window.onload() = getDrink();
 
 function getDrink() {
     // Gets random drink via TheCocktailDB API
