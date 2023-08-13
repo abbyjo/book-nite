@@ -1,35 +1,3 @@
-   // Selector(s)
-   var submitButton = document.getElementById(`submitButton`) //Submit button
-
-   //Function to save checked genres into local storage 
-   function saveForm() {
-    var bookGenres = $("input[name='genre']:checked")
-    var selectedGenres = [];
-    $.each(bookGenres, function () {
-        selectedGenres.push($(this).val());
-      });
-      selectedGenres.join();
-      localStorage.setItem('genres', selectedGenres)
-    }    
-
-   submitButton.addEventListener(`click`, function () {    
-       saveForm();
-       // Gets the value of the toggle switch
-       var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
-       // Save the toggle switch value in localStorage.
-       localStorage.setItem('toggleSwitch', toggleSwitch);
-
-       // Retrieves the value of toggle switch name.
-       var toggleSwitch = localStorage.getItem('toggleSwitch');
-       console.log(toggleSwitch)
-
-       // Directs user to Results Page
-       window.open(`./results.html`, `resultsTab`)
-   })
-
-
-
-
 // GLOBAL VARIABLES
 // Drink Image
 var drinkImageEl = document.getElementById(`drinkImage`)
@@ -42,25 +10,6 @@ var apiCocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/random.php`
 // Submit Button
 var submitButton = document.getElementById(`submitButton`)
 
-// STORE LOCAL FORM DATA SECTION
-// Add an event listener for form submissions
-// submitButton.addEventListener('click', function () {
-
-//     // Need Help here
-//     // Gets the value of the checked boxes
-//     var checkedBoxes = document.querySelectorAll(`checkbox`)
-//     console.log(checkedBoxes)
-
-//     // Gets the value of the toggle switch
-//     var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
-//     // Save the toggle switch value in localStorage.
-//     localStorage.setItem('toggleSwitch', toggleSwitch);
-
-//     // Retrieve the users name.
-//     var toggleSwitch = localStorage.getItem('toggleSwitch');
-//     console.log(toggleSwitch)
-// });
-
 // DRINK SECTION
 
 // API Call for a random cocktail
@@ -70,6 +19,8 @@ var submitButton = document.getElementById(`submitButton`)
 
 // HELP- how do I make this apply only to the results html page
 //window.onload() = getDrink();
+
+var toggleSwitch = localStorage.getItem('toggleSwitch')
 
 function getDrink() {
     // Gets random drink via TheCocktailDB API
@@ -152,5 +103,5 @@ function getBooks(){
         bookTab.children('p').html(`Curious? <a href='https://openlibrary.org${data.docs[i].key}' target='_blank' rel='noopener noreferrer'>Click here</a> to visit Open Library's catalogue and learn more!`)
     })
 }
-
-//getBooks()
+getDrink();
+getBooks();
