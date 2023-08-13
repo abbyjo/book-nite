@@ -1,3 +1,31 @@
+   // Selects the submit button
+   var submitButton = document.getElementById(`submitButton`)
+
+   submitButton.addEventListener(`click`, function () {
+       console.log(`Sarah is the smartest`)
+       debugger
+       // Stores form data in Local Storage
+       // HELP
+       // Gets the value of the checked boxes (Not correct selection)
+       var checkedBoxes = document.querySelectorAll(`checkbox`)
+       console.log(checkedBoxes)
+
+       // Gets the value of the toggle switch
+       var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
+       // Save the toggle switch value in localStorage.
+       localStorage.setItem('toggleSwitch', toggleSwitch);
+
+       // Retrieves the value of toggle switch name.
+       var toggleSwitch = localStorage.getItem('toggleSwitch');
+       console.log(toggleSwitch)
+
+       // Directs user to Results Page
+       window.open(`./results.html`, `resultsTab`)
+   })
+
+
+
+
 // GLOBAL VARIABLES
 // Drink Image
 var drinkImageEl = document.getElementById(`drinkImage`)
@@ -99,7 +127,7 @@ function getDrink() {
 }
 
 
-// BOOK SECTION
+// BOOK SECTION ---------------------------------------->
 var bookTab = $('#book-tab')
 //Function to get books based on user input
 function getBooks(){
@@ -121,4 +149,4 @@ function getBooks(){
     })
 }
 
-getBooks()
+//getBooks()

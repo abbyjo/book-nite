@@ -76,35 +76,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-
-    <!-- Switches HTML files when "See Results" is pressed -->
-    <script>
-        // Selects the submit button
-        var submitButton = document.getElementById(`submitButton`)
-
-        submitButton.addEventListener(`click`, function () {
-            console.log(`Sarah is the smartest`)
-            debugger
-            // Stores form data in Local Storage
-            // HELP
-            // Gets the value of the checked boxes (Not correct selection)
-            var checkedBoxes = document.querySelectorAll(`checkbox`)
-            console.log(checkedBoxes)
-
-            // Gets the value of the toggle switch
-            var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
-            // Save the toggle switch value in localStorage.
-            localStorage.setItem('toggleSwitch', toggleSwitch);
-
-            // Retrieves the value of toggle switch name.
-            var toggleSwitch = localStorage.getItem('toggleSwitch');
-            console.log(toggleSwitch)
-
-            // Directs user to Results Page
-            window.open(`./results.html`, `resultsTab`)
-        })
-    </script>
-
     <script src="assets/js/script.js"></script>
 </body>
 
