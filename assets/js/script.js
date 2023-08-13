@@ -17,9 +17,6 @@ var submitButton = document.getElementById(`submitButton`)
 // API Call for filter by non Alcoholic Drink
 // www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic
 
-// HELP- how do I make this apply only to the results html page
-//window.onload() = getDrink();
-
 var toggleSwitch = localStorage.getItem('toggleSwitch')
 
 function getDrink() {
@@ -84,15 +81,16 @@ function getDrink() {
 
 // BOOK SECTION ---------------------------------------->
 var bookTab = $('#book-tab')
+var bookSearch = localStorage.getItem('genres')
 //Function to get books based on user input
 function getBooks(){
     
-    var apiBookUrl = `https://openlibrary.org/search.json?sort=random&language=eng&limit=20&q=subject:thriller`
+    var apiBookUrl = `https://openlibrary.org/search.json?sort=random&language=eng&limit=20&q=${bookSearch}`
     fetch(apiBookUrl)
         .then(function (response){
             return response.json();
         })
-        //prints data to book tab
+        //Prints data to book tab
         .then (function (data){
         i = Math.floor(Math.random() * 20)
         if (data.docs[i].cover_i)
@@ -103,5 +101,6 @@ function getBooks(){
         bookTab.children('p').html(`Curious? <a href='https://openlibrary.org${data.docs[i].key}' target='_blank' rel='noopener noreferrer'>Click here</a> to visit Open Library's catalogue and learn more!`)
     })
 }
+
 getDrink();
 getBooks();
