@@ -21,11 +21,7 @@ var toggleSwitch = localStorage.getItem('toggleSwitch')
 
 function getDrink() {
     // Gets random drink via TheCocktailDB API
-
-    // getRandomAlcoholicDrink();
-    // getRandomNonAlcoholicDrink();
-
-    if (toggleSwitch === true) {
+    if (toggleSwitch === "true") {
         // Calls Alcoholic Drink Function
         getRandomAlcoholicDrink();
     } else {
