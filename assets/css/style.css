@@ -43,6 +43,7 @@ h1 {
 .custom-results-bg {
     background-color: #121214;
     background-image: url("../images/bg-img.jpg"); 
+    background-image: url("/assets/images/bg-img.jpg");
     background-repeat: no-repeat;
     background-position:top; 
 }

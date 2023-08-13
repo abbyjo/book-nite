@@ -12,16 +12,20 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,400;0,700;1,700&family=Metamorphous&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@0,400;0,700;1,700&family=Metamorphous&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="custom-bg">
-    
+
     <main class="container text-center vh-100 ">
         <h1 class="my-3 p-5 pb-3 custom-title">Book Nite<br>Generator</h1>
+
         <section id="form" class="card align-items-center custom-card">
             <div class="card-body" id="genre-select">
                 <p class="p-3">Select your preferred genres and drink type below then click the button to recieve a custom reading experience!</p>
+
                 <!-- Inline checkboxes for Book Genres-->
                 <div class="form-check form-check-inline m-2">
                     <input name="genre" class="form-check-input" type="checkbox" id="genre-1" value="subject:romance">
@@ -60,7 +64,7 @@
                     <label class="form-check-label" for="flexSwitchCheckChecked">Alcoholic</label>
                 </div>
             </div>
-            <button class="m-4 p-3 custom-btn">See Results</button>
+            <button id="submitButton" class="m-4 p-3 custom-btn">See Results</button>
         </section>
     </main>
     <!-- Previous searches can be generated and saved as buttons in footer section -->
@@ -72,6 +76,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+
+    <!-- Switches HTML files when "See Results" is pressed -->
+    <script>
+        // Selects the submit button
+        var submitButton = document.getElementById(`submitButton`)
+
+        submitButton.addEventListener(`click`, function () {
+            console.log(`Sarah is the smartest`)
+            debugger
+            // Stores form data in Local Storage
+            // HELP
+            // Gets the value of the checked boxes (Not correct selection)
+            var checkedBoxes = document.querySelectorAll(`checkbox`)
+            console.log(checkedBoxes)
+
+            // Gets the value of the toggle switch
+            var toggleSwitch = document.getElementById(`flexSwitchCheckChecked`).checked
+            // Save the toggle switch value in localStorage.
+            localStorage.setItem('toggleSwitch', toggleSwitch);
+
+            // Retrieves the value of toggle switch name.
+            var toggleSwitch = localStorage.getItem('toggleSwitch');
+            console.log(toggleSwitch)
+
+            // Directs user to Results Page
+            window.open(`./results.html`, `resultsTab`)
+        })
+    </script>
+
     <script src="assets/js/script.js"></script>
 </body>
 
