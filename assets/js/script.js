@@ -26,12 +26,10 @@ var musicRefreshBtn = document.getElementById(`music-refresh`)
 var toggleSwitch = localStorage.getItem('toggleSwitch')
 
 function getDrink() {
-    // Gets random drink via TheCocktailDB API
+    // Changes drink from alcoholic to non alcoholic based on user input
     if (toggleSwitch === "true") {
-        // Calls Alcoholic Drink Function
         getRandomAlcoholicDrink();
     } else {
-        // Calls NonAlcoholic Drink Function
         getRandomNonAlcoholicDrink();
     }
 
@@ -64,8 +62,8 @@ function getDrink() {
                     .then(function (data) {
                         var mixedDrinkInfo = data.drinks[0]
                         var alcoholicOrNah = data.drinks[0].strAlcoholic
-                        console.log(data)
 
+                        // If drink is labeled as alcoholic, run the function until it comes back false
                         if (alcoholicOrNah === `Alcoholic`) {
                             getRandomNonAlcoholicDrink();
                         } else {
@@ -76,8 +74,6 @@ function getDrink() {
                     })
             })
     }
-
-    // End of Drink Function Wrap
 }
 
 
