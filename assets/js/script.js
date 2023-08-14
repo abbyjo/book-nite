@@ -5,10 +5,16 @@ var drinkImageEl = document.getElementById(`drinkImage`)
 var drinkName = document.getElementById(`drinkName`)
 // Drink Recipe
 var drinkRecipeEl = document.getElementById(`drinkRecipe`)
-
+// Cocktail API URL
 var apiCocktailURL = `https://www.thecocktaildb.com/api/json/v1/1/random.php`
 // Submit Button
 var submitButton = document.getElementById(`submitButton`)
+// Drink Refresh Button
+var drinkRefreshBtn = document.getElementById(`drink-refresh`)
+// Book Refresh Button
+var bookRefreshBtn = document.getElementById(`book-refresh`)
+// Music Refresh Button
+var musicRefreshBtn = document.getElementById(`music-refresh`)
 
 // DRINK SECTION
 
@@ -98,5 +104,15 @@ function getBooks(){
     })
 }
 
-getDrink();
 getBooks();
+getDrink();
+
+// REFRESH FEATURE
+drinkRefreshBtn.addEventListener(`click`, function () {
+    getDrink();
+})
+
+bookRefreshBtn.addEventListener(`click`, function () {
+    getBooks();
+})
+
