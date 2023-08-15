@@ -112,26 +112,20 @@ bookRefreshBtn.addEventListener(`click`, function () {
     getBooks();
 })
 
-var music = {
-    HTML 1, <iframe width="560" height="315" src="https://www.youtube.com/embed/VnWw3IIyRXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
-    HTML 2, <iframe width="560" height="315" src="https://www.youtube.com/embed/NKDI-60H-5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    HTML 3, <iframe width="560" height="315" src="https://www.youtube.com/embed/MPkedkkbpLM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    HTML 4, <iframe width="560" height="315" src="https://www.youtube.com/embed/3VNm3rGXPXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    HTML 5, <iframe width="560" height="315" src="https://www.youtube.com/embed/htnobkrtDoo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-}
+// Music SECTION ---------------------------------------->
+var music = [
+ 
+     '<iframe width="560" height="315" src="https://www.youtube.com/embed/VnWw3IIyRXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+     '<iframe width="560" height="315" src="https://www.youtube.com/embed/NKDI-60H-5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+     '<iframe width="560" height="315" src="https://www.youtube.com/embed/MPkedkkbpLM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+     '<iframe width="560" height="315" src="https://www.youtube.com/embed/3VNm3rGXPXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+     '<iframe width="560" height="315" src="https://www.youtube.com/embed/htnobkrtDoo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+]
 
 function getMusic() {
-    fetch(youtubeURL)
-        .then(function (response) {
-            // stores response in JSON object
-            response.json()
-                .then(function (data) {
-                    // Created Variable to Store Data
-                    var music = data.getMusic[0]
-                    printMusicPlaylist(music)
-                })
-        })
+    document.getElementById("music").innerHTML="test"
 
 
 
-}
+    }
+
