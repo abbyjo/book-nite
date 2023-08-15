@@ -120,8 +120,18 @@ var music = {
     HTML 5, <iframe width="560" height="315" src="https://www.youtube.com/embed/htnobkrtDoo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 }
 
-function getMusic(){
-    
+function getMusic() {
+    fetch(youtubeURL)
+        .then(function (response) {
+            // stores response in JSON object
+            response.json()
+                .then(function (data) {
+                    // Created Variable to Store Data
+                    var music = data.getMusic[0]
+                    printMusicPlaylist(music)
+                })
+        })
+
 
 
 }
