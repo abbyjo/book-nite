@@ -123,9 +123,7 @@ var music = [
 ]
 
 function getMusic() {
-    document.getElementById("music").innerHTML="test"
-
-
-
+    var y=Math.floor(Math.random() * 5)
+    document.getElementById("music").innerHTML= music[y]
     }
 
