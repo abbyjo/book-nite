@@ -112,6 +112,8 @@ bookRefreshBtn.addEventListener(`click`, function () {
     getBooks();
 })
 
+
+
 // Music SECTION ---------------------------------------->
 var music = [
  
@@ -127,3 +129,8 @@ function getMusic() {
     document.getElementById("music").innerHTML= music[y]
     }
 
+getMusic();
+//REFRESH FEATURE
+musicRefreshBtn.addEventListener(`click` , function() {
+    getMusic();
+})
