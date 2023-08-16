@@ -78,7 +78,10 @@ function getBooks(){
         i = Math.floor(Math.random() * 20)
         if (data.docs[i].cover_i)
             {bookTab.children('img').attr('src', `https://covers.openlibrary.org/b/id/${data.docs[i].cover_i}-L.jpg`)}
-        else {console.log ("No cover image available :-(")}
+        else {
+            console.log ("No cover image available :-(");
+            bookTab.children('img').attr('src', `assets/images/book-placeholder.jpg`)
+        }
         bookTab.children('h3').text(data.docs[i].title)
         bookTab.children('h4').text(data.docs[i].author_name)
         bookTab.children('p').html(`Curious? <a href='https://openlibrary.org${data.docs[i].key}' target='_blank' rel='noopener noreferrer'>Click here</a> to visit Open Library's catalogue and learn more!`)
