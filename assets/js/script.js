@@ -8,7 +8,7 @@ var drinkRefreshBtn = document.getElementById(`drink-refresh`)
 var bookRefreshBtn = document.getElementById(`book-refresh`)
 var musicRefreshBtn = document.getElementById(`music-refresh`)
 
-// DRINK SECTION
+// DRINK SECTION ---------------------------------------->
 
 var toggleSwitch = localStorage.getItem('toggleSwitch')
 
@@ -66,7 +66,6 @@ function getDrink() {
 // BOOK SECTION ---------------------------------------->
 var bookTab = $('#book-tab')
 var bookSearch = localStorage.getItem('genres')
-//Function to get books based on user input
 function getBooks(){
     
     var apiBookUrl = `https://openlibrary.org/search.json?sort=random&language=eng&limit=20&q=${bookSearch}`
@@ -86,20 +85,7 @@ function getBooks(){
     })
 }
 
-getBooks();
-getDrink();
-
-// REFRESH FEATURE
-drinkRefreshBtn.addEventListener(`click`, function () {
-    getDrink();
-})
-
-bookRefreshBtn.addEventListener(`click`, function () {
-    getBooks();
-})
-
-
-// Music SECTION ---------------------------------------->
+// MUSIC SECTION ---------------------------------------->
 var music = [
  
      '<iframe width="560" height="315" src="https://www.youtube.com/embed/NPyiLkNf_0c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
@@ -114,8 +100,20 @@ function getMusic() {
     document.getElementById("music").innerHTML= music[y]
     }
 
+//Runs functions
+getBooks();
+getDrink();    
 getMusic();
-//REFRESH FEATURE
+
+//REFRESH BUTTON FEATURE
+drinkRefreshBtn.addEventListener(`click`, function () {
+    getDrink();
+})
+
+bookRefreshBtn.addEventListener(`click`, function () {
+    getBooks();
+})
+
 musicRefreshBtn.addEventListener(`click` , function() {
     getMusic();
 })
