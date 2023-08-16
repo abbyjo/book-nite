@@ -18,11 +18,6 @@ var musicRefreshBtn = document.getElementById(`music-refresh`)
 
 // DRINK SECTION
 
-// API Call for a random cocktail
-// www.thecocktaildb.com/api/json/v1/1/random.php
-// API Call for filter by non Alcoholic Drink
-// www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic
-
 var toggleSwitch = localStorage.getItem('toggleSwitch')
 
 function getDrink() {
@@ -36,7 +31,6 @@ function getDrink() {
     function getRandomAlcoholicDrink() {
         fetch(apiCocktailURL)
             .then(function (response) {
-                // stores response in JSON object
                 response.json()
                     .then(function (data) {
                         // Created Variable to Store Data
